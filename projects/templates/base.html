@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock title%}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          {% if user.is_authenticated %} Hello, {{ user.username }} {% else %}
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+    {% block content%}{% endblock content%}
+  </body>
+</html>
