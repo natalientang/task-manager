@@ -3,21 +3,22 @@
 <main>
   <div>
     <h1>My Projects</h1>
+    {% if list_projects|length > 0%}
     <table>
-      {% for project in list_projects %}
       <tr>
         <th>Name</th>
         <th>Number of tasks</th>
       </tr>
+      {% for project in list_projects %}
       <tr>
-        <td>{{project.name}}</td>
-        <td></td>
+        <td><a href={% url "show_project" project.id %}>{{project.name}}</a></td>
+        <td>{{project.tasks.all|length}}</td>
       </tr>
       {% endfor %}
     </table>
-    {% if not list_project %}
+    {% else %}
     <p>"You are not assigned to any projects"</p>
-    {% else %} {% endif %}
+    {% endif %}
   </div>
 </main>
 {% endblock content%}
