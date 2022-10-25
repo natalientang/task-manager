@@ -9,8 +9,4 @@ class ProjectForm(ModelForm):
             "name",
             "description",
             "owner",
-            "assignee",
-            "start_date",
-            "due_date",
-            "is_completed",
         ]
