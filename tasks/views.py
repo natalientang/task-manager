@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from tasks.forms import TaskForm
 from tasks.models import Task
 
+
 @login_required
 def create_task(request):
     if request.method == "POST":
@@ -16,6 +17,7 @@ def create_task(request):
         "form": form,
     }
     return render(request, "tasks/create.html", context)
+
 
 @login_required
 def show_my_tasks(request):
