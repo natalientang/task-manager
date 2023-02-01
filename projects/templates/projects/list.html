@@ -1,30 +1,35 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
-    My Projects
+    my projects
 {% endblock title %}
 {% block content %}
     <main>
         <div>
-            <h1>My Projects</h1>
+            <h1>⋆｡ﾟ ☾ﾟ ｡⋆｡︎☁ﾟ｡⋆ my projects ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆</h1>
+            <div class="grid">
             {% if list_projects|length > 0 %}
-                <table>
+            <div>
+                <table class="table">
                     <tr>
-                        <th>Name</th>
-                        <th>Number of tasks</th>
+                        <th class="subtitle">name</th>
+                        <th class="subtitle">number of tasks</th>
                     </tr>
                     {% for project in list_projects %}
                         <tr>
                             <td>
-                                <a href={% url "show_project" project.id %}>{{ project.name }}</a>
+                                <a class="projects" href={% url "show_project" project.id %}>{{ project.name }}</a>
                             </td>
                             <td>{{ project.tasks.all|length }}</td>
                         </tr>
                     {% endfor %}
                 </table>
+            </div>
             {% else %}
                 <p>You are not assigned to any projects</p>
             {% endif %}
+            </div>
         </div>
     </main>
 {% endblock content %}

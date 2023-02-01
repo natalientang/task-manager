@@ -1,26 +1,34 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
-    My Tasks
+    my tasks
 {% endblock title %}
 {% block content %}
     <main>
         <div>
-            <h1>My Tasks</h1>
+            <h1>⋆｡ﾟ ☾ﾟ ｡⋆｡︎☁ﾟ｡⋆ my tasks ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆</h1>
+            <div class="grid">
             {% if show_my_tasks.all|length > 0 %}
-                <table>
+                <table class="table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Start date</th>
-                            <th>Due date</th>
-                            <th>Is completed</th>
+                            <th></th>
+                            <th class="subtitle">name</th>
+                            <th class="subtitle">notes</th>
+                            <th class="subtitle">start date</th>
+                            <th class="subtitle">due date</th>
+                            <th class="subtitle">completed</th>
                         </tr>
                     </thead>
                     {% for task in show_my_tasks %}
                         <tbody>
                             <tr>
-                                <td>{{ task.name }}</td>
+                                <td><a class="new_tasks" href={% url "edit_tasks" task.id %}>
+                                    <img class="edit" src={% static "edit.png" %} alt=""/>
+                                </a></td>
+                                <td class="name">{{ task.name }}</td>
+                                <td>{{ task.notes }}</td>
                                 <td>{{ task.start_date }}</td>
                                 <td>{{ task.due_date }}</td>
                                 <td>{{ task.is_completed|yesno }}</td>
@@ -31,6 +39,7 @@
             {% else %}
                 <p>You have no tasks</p>
             {% endif %}
+            </div>
         </div>
     </main>
 {% endblock content %}

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
     {{ show_project.name }}
@@ -8,25 +9,26 @@
         <div>
             <h1>{{ show_project.name }}</h1>
             <p>{{ show_project.description }}</p>
-            <h2>Tasks</h2>
+            <h2>tasks</h2>
             <p>
-                <a href={% url "create_task" %}>Create a new task</a>
+                <a class="tasks" href={% url "create_task" %}>create a new task</a>
             </p>
+            <div class="grid">
             {% if show_project.tasks.all|length > 0 %}
-                <table>
+                <table class="table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Assignee</th>
-                            <th>Start date</th>
-                            <th>Due date</th>
-                            <th>Is completed</th>
+                            <th class="subtitle">Name</th>
+                            <th class="subtitle">Assignee</th>
+                            <th class="subtitle">Start date</th>
+                            <th class="subtitle">Due date</th>
+                            <th class="subtitle">completed</th>
                         </tr>
                         <thead>
                             {% for task in show_project.tasks.all %}
                                 <tbody>
                                     <tr>
-                                        <td>{{ task.name }}</td>
+                                        <td class="name">{{ task.name }}</td>
                                         <td>{{ task.assignee }}</td>
                                         <td>{{ task.start_date }}</td>
                                         <td>{{ task.due_date }}</td>
@@ -38,6 +40,7 @@
                     {% else %}
                         <p>This project has no tasks</p>
                     {% endif %}
+                    </div>
                 </div>
             </main>
         {% endblock content %}

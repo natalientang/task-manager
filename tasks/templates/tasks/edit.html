@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    create a new task
+    edit a task
 {% endblock title %}
 {% block content %}
     <main>
         <div>
-            <h1>⋆｡ﾟ ☾ﾟ ｡⋆｡︎☁ﾟ｡⋆ create a new task ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆</h1>
+            <h1>⋆｡ﾟ ☾ﾟ ｡⋆｡︎☁ﾟ｡⋆ edit a task ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆</h1>
             <form method="post">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button>Create</button>
+                {{ task_form.as_p }}
+                <button>Save</button>
             </form>
         </div>
     </main>

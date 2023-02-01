@@ -7,6 +7,7 @@ class TaskForm(ModelForm):
         model = Task
         fields = [
             "name",
+            "notes",
             "start_date",
             "due_date",
             "project",

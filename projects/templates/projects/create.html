@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
-    Create a new project
+    create a new project
 {% endblock title %}
 {% block content %}
     <main>
         <div>
-            <h1>Create a new project</h1>
+            <h1>⋆｡ﾟ ☾ﾟ ｡⋆｡︎☁ﾟ｡⋆ create a new project ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆</h1>
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}

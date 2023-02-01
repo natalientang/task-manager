@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,38 +6,27 @@
             {% block title %}
             {% endblock title %}
         </title>
+        <link rel="stylesheet" href="{% static "css/projects.css" %}">
     </head>
     <body>
         <header>
             <nav>
                 <ul>
                     {% if user.is_authenticated %}
-                        Hello, {{ user.username }}
-                        <li>
-                            <a href={% url "list_projects" %}>Projects</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'logout' %}">Logout</a>
-                        </li>
-                        <li>
-                            <a href={% url "create_project" %}>Create a new project</a>
-                        </li>
-                        <li>
-                            <a href={% url "create_task" %}>Create a new task</a>
-                        </li>
-                        <li>
-                            <a href={% url "show_my_tasks" %}>My tasks</a>
-                        </li>
-                        <li>
-                            <a href={% url "list_projects" %}>My projects</a>
-                        </li>
+                        <div class="welcome">
+                        welcome back, {{ user.username }}! ૮ ˶ᵔ ᵕ ᵔ˶ ა
+                        </div>
+                        <br>
+                            <a class="button"href="{% url 'logout' %}">logout</a>
+                            <a class="button"href={% url "list_projects" %}>projects</a>
+                            <a class="button" href={% url "list_projects" %}>my projects</a>
+                            <a class="button" href={% url "show_my_tasks" %}>my tasks</a>
+                            <a class="button" href={% url "create_project" %}>create a new project</a>
+                            <a class="button" href={% url "create_task" %}>create a new task</a>
+                        </br>
                     {% else %}
-                        <li>
-                            <a href="{% url 'signup' %}">Sign up</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'login' %}">Login</a>
-                        </li>
+                            <a class="button" href="{% url 'signup' %}">sign up</a>
+                            <a class="button" href="{% url 'login' %}">login</a>
                     {% endif %}
                 </ul>
             </nav>
