@@ -25,9 +25,9 @@ SECRET_KEY = (
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["task-manager-env.eba-mxjcfe7i.us-east-2.elasticbeanstalk.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["task-manager-env.eba-mxjcfe7i.us-east-2.elasticbeanstalk.com"]
 
 
 # Application definition
@@ -129,6 +129,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = 'static'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
