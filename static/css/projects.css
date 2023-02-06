@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+
+nav {
+    background-image: url(https://media.tenor.com/1KxWSlTlIZMAAAAC/clouds-anime.gif);
+    background-size: cover;
+    width: 100%;
+    background-position: 1px 300px;
+}
+
+.welcome {
+    font-size: 25px;
+    color: #395144;
+    font-weight: bold;
+    letter-spacing: .17em;
+    margin: 0 auto;
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .17em solid pink;
+    animation:
+      typing 4.0s steps(30, end),
+      .5s step-end infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+  to {
+    width: 50%
+  }
+}
+
+@keyframes blinking-cursor {
+  from,
+  to {
+    border-color: transparent
+  }
+  60% {
+    border-color: pink;
+  }
+}
+
+
+body {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    background-color: #EDE4E0;
+    text-align: center;
+    background-image: url('https://64.media.tumblr.com/07f51c3cd4fae56aa91c088366fdb7c8/tumblr_ntp1tygGNP1ucyadto1_r1_540.gifv'), url(https://giffiles.alphacoders.com/991/9910.gif);
+    background-position: 50px 150px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+  }
+
+.button {
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #DFE8CC;
+    border: 1px solid grey;
+    color: #665A48;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    text-transform: lowercase;
+    border-radius: 15px;
+    margin: 7px;
+    border: 2px solid;
+    cursor: pointer;
+    transition: .2s ease-in-out 0s;
+  }
+
+.button:hover {
+    color: #D7C0AE;
+    cursor: pointer;
+    transform: scale(1.15);
+  }
+
+.grid {
+    display: flex;
+    justify-content: center;
+  }
+
+table {
+    font-size: 19px;
+    border-spacing: 25px 9px;
+  }
+
+  .subtitle {
+    background-color: #F5EFE6;
+    color: black;
+    font-size: 17px;
+    text-transform: lowercase;
+    border-radius: 7px;
+    margin: 7px;
+    font-size: 20px;
+    padding: 4px;
+  }
+
+.projects {
+    color: #647E68;
+    font-size: 20px;
+    text-decoration: none;
+    transition: .3s ease-in-out 0s;
+}
+
+.projects:hover {
+    color: #DFD3C3;
+    font-size: 23px;
+  }
+
+.tasks {
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #C8DBBE;
+    color: black;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    text-transform: lowercase;
+    border-radius: 10px;
+    margin: 7px;
+    cursor: pointer;
+    transition: .2s ease-in-out 0s;
+  }
+
+  .tasks:hover {
+    color: #F0EBCE;
+    cursor: pointer;
+    transform: scale(1.15);
+  }
+
+  .name {
+      color: #647E68;
+  }
+
+  .edit {
+    width: 40px;
+    transform: scale(0.6);
+  }
